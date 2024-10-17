@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/guruji_login.dart';
+import 'package:hello_world/todo_app/app.dart';
 
 import 'home.dart';
 import 'mahasiswa_form.dart';
@@ -31,6 +32,11 @@ void main() {
             title: "Guruji Login App",
             description: "Login page of Guruji",
             app: GurujiLoginApp(),
+          ),
+          AppData(
+            title: "Simple Todo List",
+            description: "Simple Todo List App",
+            app: MasterPlanApp(),
           )
         ],
       ),
