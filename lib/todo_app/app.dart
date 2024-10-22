@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/todo_app/data_layer.dart';
+import 'package:hello_world/todo_app/plan_provider.dart';
 
 import 'plan_screen.dart';
 
@@ -7,8 +9,11 @@ class MasterPlanApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: PlanScreen(),
+    return MaterialApp(
+      home: PlanProvider(
+        notifier: ValueNotifier<Plan>(const Plan()),
+        child: const PlanScreen(),
+      ),
     );
   }
 }
