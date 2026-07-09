@@ -9,11 +9,9 @@ class MasterPlanApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: PlanProvider(
-        notifier: ValueNotifier<Plan>(const Plan()),
-        child: const PlanScreen(),
-      ),
+    return PlanProvider(
+      notifier: ValueNotifier<Plan>(const Plan()),
+      child: const PlanScreen(),
     );
   }
 }

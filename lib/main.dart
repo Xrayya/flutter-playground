@@ -1,13 +1,21 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_world/guruji_login.dart';
-import 'package:hello_world/todo_app/app.dart';
 
+import 'firebase_options.dart';
+import 'firebase_simple_auth/login_screen.dart';
+import 'guruji_login.dart';
 import 'home.dart';
 import 'mahasiswa_form.dart';
 import 'one_note_login.dart';
 import 'random_image.dart';
+import 'todo_app/app.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(
     const MaterialApp(
       title: "Flutter Playground",
@@ -37,7 +45,11 @@ void main() {
             title: "Simple Todo List",
             description: "Simple Todo List App",
             app: MasterPlanApp(),
-          )
+          ),
+          AppData(
+              title: "Simple Firebase Auth",
+              description: "Simple Auth using firebase",
+              app: LoginScreen())
         ],
       ),
     ),
